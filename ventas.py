@@ -51,8 +51,25 @@ crear_tabla()
 
 # Datos de ejemplo
 ventas = [
+('2024-01-20', 'Pan Integral', 'Panadería', 1990, 1, 1990*1),
+('2024-01-21', 'Arroz', 'Abarrotes', 2990, 1, 2990*1),
+('2024-01-22', 'Detergente Líquido', 'Hogar', 2990, 1, 2990*1),
+
+('2024-02-20', 'Microondas', 'Electrodoméstico', 1990, 1, 1990*1),
+('2024-02-21', 'Lámpara LED', 'Eléctrico', 2990, 1, 2990*1),
+('2024-02-22', 'Harina', 'Abarrotes', 2990, 1, 2990*1),
+
+('2024-03-20', 'Producto A', 'Categoría 1', 1990, 1, 1990*1),
+('2024-03-21', 'Producto B', 'Categoría 2', 2990, 2, 2990*2),
+('2024-03-2', 'Producto B', 'Categoría 2', 2990, 2, 2990*2),
+
+('2024-04-20', 'Producto A', 'Categoría 1', 1990, 2, 1990*2),
+('2024-04-21', 'Producto B', 'Categoría 2', 2990, 2, 2990*2),
+('2024-04-22', 'Producto B', 'Categoría 2', 2990, 2, 2990*2),
+
 ('2024-05-20', 'Producto A', 'Categoría 1', 1990, 2, 1990*2),
-('2024-01-02', 'Producto B', 'Categoría 2', 2990, 3, 2990*3)
+('2024-05-21', 'Producto B', 'Categoría 2', 2990, 2, 2990*2),
+('2024-05-22', 'Producto B', 'Categoría 2', 2990, 2, 2990*2)
 ]
 
 
