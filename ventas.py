@@ -51,11 +51,11 @@ crear_tabla()
 
 # Datos de ejemplo
 ventas = [
-('2024-01-20', 'Pan Integral', 'Panadería', 1990, 1, 1990*1),
-('2024-01-21', 'Arroz', 'Abarrotes', 2990, 1, 2990*1),
-('2024-01-22', 'Detergente Líquido', 'Hogar', 2990, 1, 2990*1),
+('2024-01-20', 'Pan Integral', 'Panadería', 1400, 1, 1400*1),
+('2024-01-21', 'Arroz', 'Abarrotes', 990, 1, 990*1),
+('2024-01-22', 'Detergente Líquido', 'Hogar', 3500, 1, 3500*1),
 
-('2024-02-20', 'Microondas', 'Electrodoméstico', 1990, 1, 1990*1),
+('2024-02-20', 'Microondas', 'Electrodoméstico', 49990, 1, 49990*1),
 ('2024-02-21', 'Lámpara LED', 'Eléctrico', 2990, 1, 2990*1),
 ('2024-02-22', 'Harina', 'Abarrotes', 2990, 1, 2990*1),
 
