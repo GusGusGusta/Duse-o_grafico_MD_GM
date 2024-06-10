@@ -19,16 +19,59 @@ id,fecha,producto,categoria,precio,cantidad,total
 18,2024-06-01,Bebida,Bebidas,1300.0,2,2600.0
 19,2024-06-01,Leche,Abarrotes,1300.0,2,2600.0
 20,2024-06-01,Jamon,Fiambreria,1300.0,2,2600.0
-21,2024YYY-MM-DD,1,PAN,1500.0,2,inf
-22,2024YYY-MM-DD,1,PAN,1500.0,1,inf
-23,2024YYY-MM-DD,1,PAN,1500.0,1,1501.0
-24,2024YYY-MM-DD,1,PAN,1500.0,1,1501.0
-25,2024YYY-MM-DD,1,PAN,1500.0,1,1501.0
-26,YYYY-MM-DD,1,PAN,1500.0,1,1501.0
-27,YYYY-MM-DD,2,CHAQUETA,35000.0,2,70000.0
+21,2024-06-01,1,PAN,1500.0,2,inf
+22,2024-06-01,1,PAN,1500.0,1,inf
+23,2024-06-01,1,PAN,1500.0,1,1501.0
+24,2024-06-01,1,PAN,1500.0,1,1501.0
+25,2024-06-01,1,PAN,1500.0,1,1501.0
+26,2024-06-01,1,PAN,1500.0,1,1501.0
+27,2024-06-01,2,CHAQUETA,35000.0,2,70000.0
 28,2024-06-03,1,PAN,1500.0,5,7500.0
 29,2024-06-03,LAVADORA,Electrodomestico,49000.0,2,98000.0
 30,2024-06-03,BISICLETA,Deporte,79000.0,1,79000.0
 31,2024-06-09,PAN,Panaderia,1500.0,2,3000.0
 32,2024-06-09,LAVADORA,Electrodomestico,49000.0,1,49000.0
-33,10-06-24,Pisco Nacional,Bebidas Alcohólicas,3990.0,5,19950.0
+33,2024-06-09,Pisco Nacional,Bebidas Alcohólicas,3990.0,5,19950.0
+34,10-06-24,Papa,Frutas y Verduras,390.0,3,1170.0
+35,10-06-24,Papa,Frutas y Verduras,390.0,1,390.0
+36,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+37,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+38,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+39,10-06-24,Pimiento Rojo,Frutas y Verduras,990.0,1,990.0
+40,10-06-24,Zanahoria,Frutas y Verduras,490.0,1,490.0
+41,10-06-24,Zanahoria,Frutas y Verduras,490.0,5,2450.0
+42,10-06-24,Papa,Frutas y Verduras,390.0,1,390.0
+43,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+44,10-06-24,Sidra Natural,Bebidas Alcohólicas,2490.0,2,4980.0
+45,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+46,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+47,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+48,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+49,10-06-24,Cebolla,Frutas y Verduras,490.0,4,1960.0
+50,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+51,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+52,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+53,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+54,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+55,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+56,10-06-24,Cebolla,Frutas y Verduras,490.0,1,490.0
+57,2024-06-10,Desodorante Roll-On de Larga Duración,Cuidado Corporal,690.0,25,17250.0
+58,2024-06-10,Linterna LED,Camping y Outdoor,1490.0,35,52150.0
+59,2024-06-10,Aceite Esencial de Eucalipto Antiséptico,Aromaterapia,890.0,5,4450.0
+60,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+61,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+62,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+63,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+64,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+65,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+66,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+67,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+68,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+69,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+70,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+71,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+72,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+73,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+74,2024-06-10,Lechuga Carola,Frutas y Verduras,400.0,1,400.0
+75,2024-06-10,Lechuca,Frutas y Verduras,600.0,2,1200.0
+76,2024-06-10,Lechuga Crespa,Frutas y Verduras,590.0,3,1770.0
