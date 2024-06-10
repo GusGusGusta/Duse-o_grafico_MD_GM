@@ -9,7 +9,7 @@ global producto, categoria, precio
 fecha = datetime.today().strftime('%d-%m-%y')
 conexion = sqlite3.connect("ventas.db")
 cursor = conexion.cursor()
-
+tucarro = []  # Inicializar la lista del carrito fuera de la función
 def exportar_ventas_csv():
     cursor.execute('SELECT * FROM ventas')
     ventas = cursor.fetchall()
@@ -54,6 +54,20 @@ def insertProductoToDb(producto):
     ''', producto)
     conexion.commit()
 
+def eliminarProductoToDb(producto):
+    cursor.execute('''
+    DELETE from productos where id = ?  
+    ''', producto)
+    conexion.commit()
+
+def actualizarProductoToDb(id, nombre, categoria, precio):
+    cursor.execute('''
+    UPDATE productos
+    SET nombre = ?, categoria = ?, precio = ?
+    WHERE id = ?
+    ''', (nombre, categoria, precio, id))
+    conexion.commit()
+
 def leer_datos():
     cursor.execute('SELECT * FROM ventas')
     ventas = cursor.fetchall()
@@ -89,14 +103,14 @@ def crear_tablas():
 crear_tablas()
 
 def inicio():
-    print("============================")
-    print("✔️ SELECCIONA UNA OPCION ✔️")
-    print("============================")
-    print("🔵 1️⃣  🏷️ INGRESAR PRODUCTO 🏷️")
-    print("🔵 2️⃣       🛒 CAJA 🛒")
-    print("🔵 3️⃣     📑 EXPORTAR 📑")
-    print("🔵 4️⃣       🚪 SALIR 🚪")
-    print("============================")
+    print("===================================")
+    print("   ✔️   MENU PRINCIPAL LYDER  ✔️")
+    print("====================================")
+    print("🔵 1️⃣  🏷️  MANTENEDOR PRODUCTOS 🏷️")
+    print("🔵 2️⃣         🛒 CAJA 🛒")
+    print("🔵 3️⃣       📑 EXPORTAR 📑")
+    print("🔵 4️⃣         🚪 SALIR 🚪")
+    print("=====================================")
     ops = input("Ingresa opcion ==> ")
 
     while True:
@@ -114,14 +128,14 @@ def inicio():
             inicio()
 
 def exportar():
-    print("============================")
+    print("=====================================")
     print("✔️ SELECCIONA UNA OPCION ✔️")
-    print("============================")
+    print("=====================================")
     print("🔵 1️⃣      📑 EXCEL 📑")
     print("🔵 2️⃣    📊 POWER BI 📊")
     print("🔵 3️⃣     🔙 VOLVER 🔙")
     print("🔵 4️⃣      🚪 SALIR 🚪")
-    print("============================")
+    print("=====================================")
     ops = input("Ingresa opcion ==> ")
 
     while True:
@@ -141,28 +155,28 @@ def exportar():
             inicio()
 
 def exportar_excel():
-    print("============================")
+    print("=====================================")
     print("✔️ SELECCIONA UNA OPCION ✔️")
-    print("============================")
+    print("=====================================")
     print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
     print("🔵 2️⃣       🛒 VENTAS 🛒")
     print("🔵 3️⃣       🔙 VOLVER 🔙")
     print("🔵 4️⃣        🚪 SALIR 🚪")
-    print("============================")
+    print("=====================================")
     ops = input("Ingresa opcion ==> ")
 
     while True:
         if ops == '1':
             exportar_productos_csv()
-            print("============================")
+            print("=====================================")
             print("Excel Exportado con exito ! ")
-            print("============================")
+            print("=====================================")
             inicio()
         elif ops == '2':
             exportar_ventas_csv()
-            print("============================")
+            print("=====================================")
             print("Excel Exportado con exito ! ")
-            print("============================")
+            print("=====================================")
             inicio()
         elif ops == '3':
             exportar()
@@ -174,28 +188,28 @@ def exportar_excel():
             exportar_excel()
 
 def exportar_powerbi():
-    print("============================")
+    print("=====================================")
     print("✔️ SELECCIONA UNA OPCION ✔️")
-    print("============================")
+    print("=====================================")
     print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
     print("🔵 2️⃣       🛒 VENTAS 🛒")
     print("🔵 3️⃣       🔙 VOLVER 🔙")
     print("🔵 4️⃣        🚪 SALIR 🚪")
-    print("============================")
+    print("=====================================")
     ops = input("Ingresa opcion ==> ")
 
     while True:
         if ops == '1':
             exportar_productos_csv()
-            print("============================")
+            print("=====================================")
             print("Excel Exportado con exito ! ")
-            print("============================")
+            print("=====================================")
             inicio()
         elif ops == '2':
             exportar_ventas_csv()
-            print("============================")
+            print("=====================================")
             print("Excel Exportado con exito ! ")
-            print("============================")
+            print("=====================================")
             inicio()
         elif ops == '3':
             exportar()
@@ -206,54 +220,153 @@ def exportar_powerbi():
             print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
             exportar_excel()
 
+def mantenedor_productos():
+    print("====================================")
+    print("     🏷️ MANTENEDOR PRODUCTOS 🏷️    ")
+    print("====================================")
+    print("====================================")
+    print("🔵 1️⃣  🏷️  INGRESAR PRODUCTOS 🏷️")
+    print("🔵 2️⃣  🏷️  ACTUALIZAR PRODUCTOS 🏷️")
+    print("🔵 3️⃣  🏷️  ELIMINAR PRODUCTOS 🏷️")
+    print("🔵 4️⃣        🔙 VOLVER 🔙")
+    print("🔵 5️⃣         🚪 SALIR 🚪")
+    print("=====================================")
+    ops = input("Ingresa opcion ==> ")
+
+    while True:
+        if ops == '1':
+            ingresar_producto()
+        elif ops == '2':
+            #actualizar_producto()
+            print("Saliendo del programa...")
+        elif ops == '3':
+            eliminar_producto()
+        elif ops == '4':
+            inicio()
+        elif ops == '5':
+            print("Saliendo del programa...")
+            break
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            mantenedor_productos()
+            break
   
+def actualizar_producto():
+    print("============================")
+    print("   ✏️ ACTUALIZAR PRODUCTO ✏️  ")
+    print("============================")
+    try:
+        id = int(input("Ingresa el ID del producto a actualizar ==> "))
+    except ValueError:
+        print("❗ Entrada inválida. El ID debe ser un número.")
+        print("Saliendo del programa...")
+        actualizar_producto()
+
+    nombre = input("Ingresa el nuevo nombre del producto ==> ")
+    categoria = input("Ingresa la nueva categoría del producto ==> ")
+    try:
+        precio = int(input("Ingresa el nuevo precio del producto ==> "))
+    except ValueError:
+        print("❗ Entrada inválida. El precio debe ser un número.")
+        print("Saliendo del programa...")
+        actualizar_producto()
+
+    actualizarProductoToDb(id, nombre, categoria, precio)
+    print(f"Producto {nombre} actualizado con éxito.")
+    mantenedor_productos()
+
 def ingresar_producto():
     print("============================")
     print("   🏷️ INGRESO PRODUCTO 🏷️  ")
     print("============================")
     Producto = input("Ingresa el nombre del producto ==> ")
     categoria = input("Ingresa la categoría del producto ==> ")
-    precio = int(input("Ingresa el precio del producto ==> "))
-
-    productos = (Producto, categoria, precio)
-
-    insertProductoToDb(productos)
-    print("============================")
+    try:
+        precio = float(input("Ingresa el precio del producto ==> "))
+    except ValueError:
+        print("❗ Entrada inválida. El precio debe ser un número.")
+        ingresar_producto()
+    producto = (Producto, categoria, precio)
+    insertProductoToDb(producto)
     print(f"Producto {Producto} ingresado con éxito.")
-    print("============================")
-    inicio()
-    
+    mantenedor_productos()
+
+def eliminar_producto():
+    print("=====================================")
+    print("   🏷️ ELIMINAR PRODUCTO 🏷️  ")
+    print("=====================================")
+    codigo = input("Ingresa Codigo del producto ==> ")
+    eliminarProductoToDb(codigo)
+    print("=====================================")
+    print(f"Producto {codigo} Eliminado con éxito.")
+    print("=====================================")
+    mantenedor_productos()
+        
 def ingresar_caja():
-    print("")
+    print("Para finalizar teclear 'fin'")
     print("============================")
     print("        🛒 CAJA 🛒         ")
-    print(" 🗓️  FECHA " + fecha + " 🗓️")
+    print(f" 🗓️  FECHA {fecha} 🗓️")
     print("============================")
-    print("  🕵️‍♂️ SELECCION PRODUCTO 🕵️‍♀️ ")
+    print("  🕵️‍♂️ SELECCIONA PRODUCTO 🕵️‍♀️ ")
     print("============================") 
-    producto_id = int(input("Ingresa código del producto ==> "))
-    cantidad = int(input("Ingresa cantidad ==> "))
-    producto_seleccionado = buscar_producto_por_id(producto_id)
 
-    if producto_seleccionado:
-        tipo = producto_seleccionado['nombre']
-        categoria = producto_seleccionado['categoria']
-        precio = producto_seleccionado['precio']
-        total = cantidad * precio
-        print(f"Producto Seleccionado: {tipo} UN: {cantidad} Total: {total}")
+    while True:
+        print("          TU CARRO         ")
+        print("____________________________")
+        for item in tucarro:
+            print(f"{item['tipo']} - Cantidad: {item['cantidad']} - Total: {item['total']}")
+        print("____________________________")
+        print("============================") 
 
-        ventas = [(fecha, tipo, categoria, precio, cantidad, total)]
-        for venta in ventas:
-            insertToDb(venta)
-    else:
-        print("============================")
-        print()
-        print("❗ PRODUCTO NO ENCONTRADO ❗")
-        print("❗  INTÉNTALO NUEVAMENTE ❗")    
+        producto_id = input("Ingresa código del producto ==> ")
+
+        if producto_id.lower() == "fin":
+            total_carrito = sum(item['total'] for item in tucarro)
+            print("============================")
+            print("          TOTAL            ")            
+            print(f"Total de la compra: {total_carrito}")
+            print("============================")
+            inicio()
+
+        if not producto_id.isdigit():
+            print("❗ Entrada inválida. El código del producto debe ser un número.")
+            print("Volviendo al programa...")
+            continue
+
+        producto_id = int(producto_id)
+        cantidad = input("Ingresa cantidad ==> ")
+        if not cantidad.isdigit():
+            print("❗ Entrada inválida. La cantidad debe ser un número.")
+            print("Volviendo al programa...")
+            continue
+
+        cantidad = int(cantidad)
+        producto_seleccionado = buscar_producto_por_id(producto_id)
+
+        if producto_seleccionado:
+            tipo = producto_seleccionado['nombre']
+            categoria = producto_seleccionado['categoria']
+            precio = producto_seleccionado['precio']
+            total = cantidad * precio
+            print(f"Producto Seleccionado: {tipo} UN: {cantidad} Total: {total}")
+
+            # Agregar la selección al carrito
+            tucarro.append({
+                'tipo': tipo,
+                'cantidad': cantidad,
+                'total': total
+            })
+
+            ventas = [(fecha, tipo, categoria, precio, cantidad, total)]
+            for venta in ventas:
+                insertToDb(venta)
+        else:
+            print("============================")
+            print()
+            print("❗ PRODUCTO NO ENCONTRADO ❗")
+            print("❗  INTÉNTALO NUEVAMENTE ❗")
 
 
 
-# Llamar a la función inicio para empezar el proceso
-#print(leer_datos())
-
-#inicio()
+inicio()
