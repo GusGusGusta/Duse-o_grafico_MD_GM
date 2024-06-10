@@ -1,108 +1,16 @@
 # -*- coding: utf-8 -*-
 import sqlite3
 import csv
+from datetime import datetime
 
-def crear_tabla():
-    conexion = sqlite3.connect("ventas.db")
-    cursor = conexion.cursor()
-    cursor.execute('''
-    CREATE TABLE IF NOT EXISTS ventas (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        fecha TEXT,
-        producto TEXT,
-        categoria TEXT,
-        precio REAL,
-        cantidad INTEGER,
-        total REAL
-    )
-    ''')
-    conexion.commit()
-    conexion.close()
+global tipo, cantidad, total
+global producto, categoria, precio
 
-def insertToDb(ventas):
-    conexion = sqlite3.connect("ventas.db")
-    cursor = conexion.cursor()
-    cursor.execute('''
-    INSERT INTO ventas (fecha, producto, categoria, precio, cantidad, total)
-    VALUES ('2024-01-20', 'Pan Integral', 'Panadería', 1400, 1, 1400*1)
-    ''', ventas)
-    conexion.commit()
-    conexion.close()
+fecha = datetime.today().strftime('%d-%m-%y')
+conexion = sqlite3.connect("ventas.db")
+cursor = conexion.cursor()
 
-def leer_datos():
-    conexion = sqlite3.connect("ventas.db")
-    cursor = conexion.cursor()
-    cursor.execute('SELECT * FROM ventas')
-    ventas = cursor.fetchall()
-    conexion.close()
-    return ventas
-
-def buscar_por_fecha(fecha):
-    conexion = sqlite3.connect("ventas.db")
-    cursor = conexion.cursor()
-    cursor.execute('SELECT * FROM ventas WHERE fecha = ?', (fecha,))
-    ventas = cursor.fetchall()
-    #devolver diccionario con key nombre del campo:
-    ventas = [dict(id=venta[0], fecha=venta[1], producto=venta[2], categoria=venta[3], precio=venta[4], cantidad=venta[5], total=venta[6]) for venta in ventas]
-    conexion.close()
-    return ventas
-
-crear_tabla()
-
-# Datos de ejemplo
-
-ventas = [
-    ('2024-01-20', 'Pan Integral', 'Panadería', 1400, 1, 1400*1),
-    ('2024-01-21', 'Arroz', 'Abarrotes', 990, 1, 990*1),
-    ('2024-01-22', 'Detergente Líquido', 'Hogar', 3500, 1, 3500*1),
-    ('2024-02-20', 'Microondas', 'Electrodoméstico', 49990, 1, 49990*1),
-    ('2024-02-21', 'Lámpara LED', 'Eléctrico', 4990, 1, 4990*1),
-    ('2024-02-22', 'Harina', 'Abarrotes', 990, 1, 990*1),
-    ('2024-03-20', 'Café Instantáneo', 'Abarrotes', 2590, 1, 2590*1),
-    ('2024-03-21', 'Sartén Antiadherente', 'Hogar', 29990, 2, 29990*2),
-    ('2024-03-2', 'Licuadora', 'Electrodoméstico', 29990, 2, 22990*2),
-    ('2024-04-20', 'alargador de Enchufes', 'Eléctrico', 3990, 2, 3990*2),
-    ('2024-04-21', 'Fideos', 'Abarrotes', 990, 2, 990*2),
-    ('2024-04-22', 'Tarro Salmon', 'Abarrotes', 1200, 2, 1200*2),
-    ('2024-05-20', 'Cubre Camas', 'Hogar', 19990, 2, 19990*2),
-    ('2024-05-21', 'Sabanas', 'Hogar', 20990, 2, 20990*2),
-    ('2024-05-22', 'Pan Molde', 'Panadería', 1300, 2, 1300*2),
-    ('2024-06-01', 'Galleta', 'Panadería', 1300, 2, 1300*2),
-    ('2024-06-01', 'Palta', 'Verdureria', 1300, 2, 1300*2),
-    ('2024-06-01', 'Bebida', 'Bebidas', 1300, 2, 1300*2),
-    ('2024-06-01', 'Leche', 'Abarrotes', 1300, 2, 1300*2),
-    ('2024-06-01', 'Jamon', 'Fiambreria', 1300, 2, 1300*2)
-]
-
-
-
-
-#for venta in ventas:
-#    insertToDb(venta)
-
-#leer data:
-#data = leer_datos()
-#print(data)
-
-#UTF8:
-print('Ventas del día:')
-texto = "¡Hola, mundo!"
-bytes_utf8 = texto.encode('utf-8')
-print(bytes_utf8.decode('utf-8'))  # b'\xc2\xa1Hola, mundo!'
-
-
-
-#buscar por fecha:
-ventas_hoy = buscar_por_fecha('2024-05-20')
-
-for venta in ventas_hoy:
-    print(int(venta['total']))
-
-#Necesito Exportar todos los datos a csv desde el SQLITE:
-def exportar_csv():
-
-    conexion = sqlite3.connect("ventas.db")
-    cursor = conexion.cursor()
+def exportar_ventas_csv():
     cursor.execute('SELECT * FROM ventas')
     ventas = cursor.fetchall()
     conexion.close()
@@ -111,4 +19,241 @@ def exportar_csv():
         writer.writerow(['id', 'fecha', 'producto', 'categoria', 'precio', 'cantidad', 'total'])
         writer.writerows(ventas)
 
-exportar_csv()
+def exportar_productos_csv():
+    cursor.execute('SELECT * FROM productos')
+    productos = cursor.fetchall()
+    conexion.close()
+    with open('productos.csv', 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['id', 'producto', 'categoria', 'precio'])
+        writer.writerows(productos)
+
+def buscar_producto_por_id(producto_id):
+    cursor.execute('SELECT * FROM productos WHERE id = ?', (producto_id,))
+    producto = cursor.fetchone()
+    if producto:
+        return {
+            'id': producto[0],
+            'nombre': producto[1],
+            'categoria': producto[2],
+            'precio': producto[3]
+        }
+    return None
+
+def insertToDb(ventas):
+    cursor.execute('''
+    INSERT INTO ventas (fecha, producto, categoria, precio, cantidad, total)
+    VALUES (?, ?, ?, ?, ?, ?)
+    ''', ventas)
+    conexion.commit()
+
+def insertProductoToDb(producto):
+    cursor.execute('''
+    INSERT INTO productos (nombre, categoria, precio)
+    VALUES (?, ?, ?)
+    ''', producto)
+    conexion.commit()
+
+def leer_datos():
+    cursor.execute('SELECT * FROM ventas')
+    ventas = cursor.fetchall()
+    return ventas
+
+def buscar_por_fecha(fecha):
+    cursor.execute('SELECT * FROM ventas WHERE fecha = ?', (fecha,))
+    ventas = cursor.fetchall()
+    ventas = [dict(id=venta[0], fecha=venta[1], producto=venta[2], categoria=venta[3], precio=venta[4], cantidad=venta[5], total=venta[6]) for venta in ventas]
+    return ventas
+
+def crear_tablas():
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS ventas (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            fecha TEXT,
+            producto TEXT,
+            categoria TEXT,
+            precio INTEGER,
+            cantidad INTEGER,
+            total REAL
+        )''') # Se eliminó el punto y coma y se separaron las sentencias
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS productos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            nombre TEXT,
+            categoria TEXT,
+            precio INTEGER
+        )''')  # Se eliminó el punto y coma y se separaron las sentencias
+    
+    conexion.commit()
+crear_tablas()
+
+def inicio():
+    print("============================")
+    print("✔️ SELECCIONA UNA OPCION ✔️")
+    print("============================")
+    print("🔵 1️⃣  🏷️ INGRESAR PRODUCTO 🏷️")
+    print("🔵 2️⃣       🛒 CAJA 🛒")
+    print("🔵 3️⃣     📑 EXPORTAR 📑")
+    print("🔵 4️⃣       🚪 SALIR 🚪")
+    print("============================")
+    ops = input("Ingresa opcion ==> ")
+
+    while True:
+        if ops == '1':
+            ingresar_producto()
+        elif ops == '2':
+            ingresar_caja()
+        elif ops == '3':
+            exportar()
+        elif ops == '4':
+            print("Saliendo del programa...")           
+            break
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            inicio()
+
+def exportar():
+    print("============================")
+    print("✔️ SELECCIONA UNA OPCION ✔️")
+    print("============================")
+    print("🔵 1️⃣      📑 EXCEL 📑")
+    print("🔵 2️⃣    📊 POWER BI 📊")
+    print("🔵 3️⃣     🔙 VOLVER 🔙")
+    print("🔵 4️⃣      🚪 SALIR 🚪")
+    print("============================")
+    ops = input("Ingresa opcion ==> ")
+
+    while True:
+        if ops == '1':
+            exportar_excel()
+        elif ops == '2':
+            #informe()
+            exportar_powerbi()
+            break
+        elif ops == '3':
+            inicio()
+        elif ops == '4':
+            print("Saliendo del programa...")
+            break
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            inicio()
+
+def exportar_excel():
+    print("============================")
+    print("✔️ SELECCIONA UNA OPCION ✔️")
+    print("============================")
+    print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
+    print("🔵 2️⃣       🛒 VENTAS 🛒")
+    print("🔵 3️⃣       🔙 VOLVER 🔙")
+    print("🔵 4️⃣        🚪 SALIR 🚪")
+    print("============================")
+    ops = input("Ingresa opcion ==> ")
+
+    while True:
+        if ops == '1':
+            exportar_productos_csv()
+            print("============================")
+            print("Excel Exportado con exito ! ")
+            print("============================")
+            inicio()
+        elif ops == '2':
+            exportar_ventas_csv()
+            print("============================")
+            print("Excel Exportado con exito ! ")
+            print("============================")
+            inicio()
+        elif ops == '3':
+            exportar()
+        elif ops == '4':
+            print("Saliendo del programa...")
+            break
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            exportar_excel()
+
+def exportar_powerbi():
+    print("============================")
+    print("✔️ SELECCIONA UNA OPCION ✔️")
+    print("============================")
+    print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
+    print("🔵 2️⃣       🛒 VENTAS 🛒")
+    print("🔵 3️⃣       🔙 VOLVER 🔙")
+    print("🔵 4️⃣        🚪 SALIR 🚪")
+    print("============================")
+    ops = input("Ingresa opcion ==> ")
+
+    while True:
+        if ops == '1':
+            exportar_productos_csv()
+            print("============================")
+            print("Excel Exportado con exito ! ")
+            print("============================")
+            inicio()
+        elif ops == '2':
+            exportar_ventas_csv()
+            print("============================")
+            print("Excel Exportado con exito ! ")
+            print("============================")
+            inicio()
+        elif ops == '3':
+            exportar()
+        elif ops == '4':
+            print("Saliendo del programa...")
+            break
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            exportar_excel()
+
+  
+def ingresar_producto():
+    print("============================")
+    print("   🏷️ INGRESO PRODUCTO 🏷️  ")
+    print("============================")
+    Producto = input("Ingresa el nombre del producto ==> ")
+    categoria = input("Ingresa la categoría del producto ==> ")
+    precio = int(input("Ingresa el precio del producto ==> "))
+
+    productos = (Producto, categoria, precio)
+
+    insertProductoToDb(productos)
+    print("============================")
+    print(f"Producto {Producto} ingresado con éxito.")
+    print("============================")
+    inicio()
+    
+def ingresar_caja():
+    print("")
+    print("============================")
+    print("        🛒 CAJA 🛒         ")
+    print(" 🗓️  FECHA " + fecha + " 🗓️")
+    print("============================")
+    print("  🕵️‍♂️ SELECCION PRODUCTO 🕵️‍♀️ ")
+    print("============================") 
+    producto_id = int(input("Ingresa código del producto ==> "))
+    cantidad = int(input("Ingresa cantidad ==> "))
+    producto_seleccionado = buscar_producto_por_id(producto_id)
+
+    if producto_seleccionado:
+        tipo = producto_seleccionado['nombre']
+        categoria = producto_seleccionado['categoria']
+        precio = producto_seleccionado['precio']
+        total = cantidad * precio
+        print(f"Producto Seleccionado: {tipo} UN: {cantidad} Total: {total}")
+
+        ventas = [(fecha, tipo, categoria, precio, cantidad, total)]
+        for venta in ventas:
+            insertToDb(venta)
+    else:
+        print("============================")
+        print()
+        print("❗ PRODUCTO NO ENCONTRADO ❗")
+        print("❗  INTÉNTALO NUEVAMENTE ❗")    
+
+
+
+# Llamar a la función inicio para empezar el proceso
+#print(leer_datos())
+
+#inicio()

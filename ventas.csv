@@ -1,1 +1,34 @@
 id,fecha,producto,categoria,precio,cantidad,total
+1,2024-01-20,Pan Integral,Panadería,1400.0,1,1400.0
+2,2024-01-21,Arroz,Abarrotes,990.0,1,990.0
+3,2024-01-22,Detergente Líquido,Hogar,3500.0,1,3500.0
+4,2024-02-20,Microondas,Electrodoméstico,49990.0,1,49990.0
+5,2024-02-21,Lámpara LED,Eléctrico,4990.0,1,4990.0
+6,2024-02-22,Harina,Abarrotes,990.0,1,990.0
+7,2024-03-20,Café Instantáneo,Abarrotes,2590.0,1,2590.0
+8,2024-03-21,Sartén Antiadherente,Hogar,29990.0,2,59980.0
+9,2024-03-2,Licuadora,Electrodoméstico,29990.0,2,45980.0
+10,2024-04-20,alargador de Enchufes,Eléctrico,3990.0,2,7980.0
+11,2024-04-21,Fideos,Abarrotes,990.0,2,1980.0
+12,2024-04-22,Tarro Salmon,Abarrotes,1200.0,2,2400.0
+13,2024-05-20,Cubre Camas,Hogar,19990.0,2,39980.0
+14,2024-05-21,Sabanas,Hogar,20990.0,2,41980.0
+15,2024-05-22,Pan Molde,Panadería,1300.0,2,2600.0
+16,2024-06-01,Galleta,Panadería,1300.0,2,2600.0
+17,2024-06-01,Palta,Verdureria,1300.0,2,2600.0
+18,2024-06-01,Bebida,Bebidas,1300.0,2,2600.0
+19,2024-06-01,Leche,Abarrotes,1300.0,2,2600.0
+20,2024-06-01,Jamon,Fiambreria,1300.0,2,2600.0
+21,2024YYY-MM-DD,1,PAN,1500.0,2,inf
+22,2024YYY-MM-DD,1,PAN,1500.0,1,inf
+23,2024YYY-MM-DD,1,PAN,1500.0,1,1501.0
+24,2024YYY-MM-DD,1,PAN,1500.0,1,1501.0
+25,2024YYY-MM-DD,1,PAN,1500.0,1,1501.0
+26,YYYY-MM-DD,1,PAN,1500.0,1,1501.0
+27,YYYY-MM-DD,2,CHAQUETA,35000.0,2,70000.0
+28,2024-06-03,1,PAN,1500.0,5,7500.0
+29,2024-06-03,LAVADORA,Electrodomestico,49000.0,2,98000.0
+30,2024-06-03,BISICLETA,Deporte,79000.0,1,79000.0
+31,2024-06-09,PAN,Panaderia,1500.0,2,3000.0
+32,2024-06-09,LAVADORA,Electrodomestico,49000.0,1,49000.0
+33,10-06-24,Pisco Nacional,Bebidas Alcohólicas,3990.0,5,19950.0

@@ -1,0 +1,309 @@
+id,producto,categoria,precio
+1,Manzana Roja,Frutas y Verduras,890
+2,Plátano,Frutas y Verduras,650
+3,Lechuga Crespa,Frutas y Verduras,590
+4,Zanahoria,Frutas y Verduras,490
+5,Papa,Frutas y Verduras,390
+6,Cebolla,Frutas y Verduras,490
+7,Pimiento Rojo,Frutas y Verduras,990
+8,Tomate,Frutas y Verduras,690
+9,Brócoli,Frutas y Verduras,790
+10,Palta Hass,Frutas y Verduras,1290
+11,Sandía,Frutas y Verduras,990
+12,Piña,Frutas y Verduras,1290
+13,Naranja,Frutas y Verduras,590
+14,Limón,Frutas y Verduras,490
+15,Pera,Frutas y Verduras,1090
+16,Uva,Frutas y Verduras,1890
+17,Fresas,Frutas y Verduras,990
+18,Ciruela,Frutas y Verduras,890
+19,Kiwi,Frutas y Verduras,890
+20,Durazno,Frutas y Verduras,1090
+21,Maní,Frutas y Verduras,1490
+22,Almendras,Frutas y Verduras,1690
+23,Nuez,Frutas y Verduras,1990
+24,Aguacate,Frutas y Verduras,1290
+25,Repollo,Frutas y Verduras,490
+26,Espinaca,Frutas y Verduras,590
+27,Cilantro,Frutas y Verduras,390
+28,Perejil,Frutas y Verduras,390
+29,Apio,Frutas y Verduras,590
+30,Pepino,Frutas y Verduras,490
+31,Choclo,Frutas y Verduras,690
+32,Acelga,Frutas y Verduras,690
+33,Rábano,Frutas y Verduras,790
+34,Hinojo,Frutas y Verduras,990
+35,Coliflor,Frutas y Verduras,890
+36,Puerro,Frutas y Verduras,790
+37,Remolacha,Frutas y Verduras,590
+38,Habas,Frutas y Verduras,1090
+39,Higo,Frutas y Verduras,1290
+40,Uchuva,Frutas y Verduras,1490
+41,Chirimoya,Frutas y Verduras,1690
+42,Pitahaya,Frutas y Verduras,1890
+43,Mango,Frutas y Verduras,990
+44,Tuna,Frutas y Verduras,1290
+45,Granadilla,Frutas y Verduras,1090
+46,Guayaba,Frutas y Verduras,790
+47,Maracuyá,Frutas y Verduras,890
+48,Caqui,Frutas y Verduras,990
+49,Zapallo,Frutas y Verduras,590
+50,Zapallito Italiano,Frutas y Verduras,690
+51,Zucchini,Frutas y Verduras,790
+52,Calabacín,Frutas y Verduras,890
+53,Tamarillo,Frutas y Verduras,990
+54,Mandarina,Frutas y Verduras,690
+55,Pomelo,Frutas y Verduras,890
+56,Berries Mix,Frutas y Verduras,1690
+57,Frutillas,Frutas y Verduras,890
+58,Cerezas,Frutas y Verduras,2490
+59,Ciruelas Rojas,Frutas y Verduras,990
+60,Ciruelas Amarillas,Frutas y Verduras,990
+61,Huevos Blancos,Huevos,2390
+62,Huevos de Campo,Huevos,3490
+63,Huevos de Codorniz,Huevos,2890
+64,Huevos de Pato,Huevos,3890
+65,Huevos de Gallina Feliz,Huevos,4390
+66,Leche Entera,Lácteos,1090
+67,Leche Descremada,Lácteos,990
+68,Leche de Soya,Lácteos,1690
+69,Leche de Almendras,Lácteos,1990
+70,Leche de Coco,Lácteos,1790
+71,Yogurt Natural,Lácteos,890
+72,Yogurt Griego,Lácteos,1290
+73,Yogurt de Frutas,Lácteos,1190
+74,Queso Fresco,Lácteos,1890
+75,Queso Mantecoso,Lácteos,2990
+76,Queso Cheddar,Lácteos,2390
+77,Queso Gouda,Lácteos,2590
+78,Queso Parmesano,Lácteos,1890
+79,Queso Azul,Lácteos,3290
+80,Queso de Cabra,Lácteos,3990
+81,Queso Manchego,Lácteos,3490
+82,Queso Emmental,Lácteos,2990
+83,Mantequilla,Lácteos,1490
+84,Margarina,Lácteos,1190
+85,Crema de Leche,Lácteos,1390
+86,Leche Condensada,Lácteos,1090
+87,Leche Evaporada,Lácteos,990
+88,Helado de Vainilla,Lácteos,1990
+89,Helado de Chocolate,Lácteos,1990
+90,Helado de Frutilla,Lácteos,1990
+91,Helado de Menta,Lácteos,1990
+92,Helado de Café,Lácteos,1990
+93,Helado de Coco,Lácteos,1990
+94,Helado de Nuez,Lácteos,1990
+95,Cereal de Avena,Cereales,2190
+96,Arroz Integral,Granos y Legumbres,1490
+97,Quinoa,Granos y Legumbres,2690
+98,Garbanzos,Granos y Legumbres,1390
+99,Fideos de Trigo,Pastas,1290
+100,Salsa de Tomate,Salsas y Condimentos,990
+101,Aceite de Oliva Extra Virgen,Aceites y Vinagres,3990
+102,Vinagre Balsámico,Aceites y Vinagres,2990
+103,Miel de Abeja,Endulzantes,3490
+104,Azúcar Blanca,Endulzantes,990
+105,Sal de Mar,Condimentos,1290
+106,Pimienta Negra,Condimentos,1590
+107,Café Colombiano,Café y Té,4990
+108,Té Verde,Café y Té,2590
+109,Chocolate Amargo 70%,Chocolate y Dulces,3490
+110,Galletas Integrales,Snacks y Galletas,1990
+111,Chips de Tortilla,Snacks y Galletas,1490
+112,Papas Fritas,Snacks y Galletas,1690
+113,Agua Mineral,Bebidas,990
+114,Jugo de Naranja,Bebidas,1490
+115,Vino Tinto Reserva,Bebidas Alcohólicas,5990
+116,Cerveza Artesanal,Bebidas Alcohólicas,3490
+117,Whisky Escocés 12 años,Bebidas Alcohólicas,8990
+118,Ron Añejo,Bebidas Alcohólicas,4490
+119,Vodka Premium,Bebidas Alcohólicas,4990
+120,Pisco Nacional,Bebidas Alcohólicas,3990
+121,Ginebra Inglesa,Bebidas Alcohólicas,5990
+122,Tequila Reposado,Bebidas Alcohólicas,4490
+123,Licor de Café,Bebidas Alcohólicas,2990
+124,Vermut Blanco,Bebidas Alcohólicas,3490
+125,Sidra Natural,Bebidas Alcohólicas,2490
+126,Jabón de Tocador,Higiene y Cuidado Personal,990
+127,Shampoo Reparador,Higiene y Cuidado Personal,1890
+128,Acondicionador Nutritivo,Higiene y Cuidado Personal,1690
+129,Papel Higiénico,Higiene y Limpieza,1490
+130,Detergente Líquido,Higiene y Limpieza,2990
+131,Desinfectante Multiusos,Higiene y Limpieza,2490
+132,Escoba de Cerdas,Hogar y Limpieza,1290
+133,Cubiertos de Acero Inoxidable,Utensilios de Cocina,3990
+134,Sartén Antiadherente,Utensilios de Cocina,4990
+135,Olla a Presión,Utensilios de Cocina,5990
+136,Tupperware Set 10 piezas,Almacenamiento de Alimentos,2490
+137,Cepillo de Dientes,Higiene Bucal,890
+138,Hilo Dental,Higiene Bucal,690
+139,Enjuague Bucal,Higiene Bucal,1490
+140,Pañales Desechables,Bebés y Niños,4990
+141,Toallitas Húmedas,Bebés y Niños,1290
+142,Leche en Polvo para Bebés,Bebés y Niños,3290
+143,Crema Protectora para Bebés,Bebés y Niños,1690
+144,Juguete Didáctico,Juguetes,2490
+145,Rompecabezas de 1000 piezas,Juguetes,3490
+146,Peluche de Oso,Juguetes,1990
+147,Balón de Fútbol,Deportes y Recreación,1290
+148,Raqueta de Tenis,Deportes y Recreación,2990
+149,Set de Yoga (Tapete + Bloques),Deportes y Recreación,3990
+150,Linterna LED,Camping y Outdoor,1490
+151,Saco de Dormir Ligero,Camping y Outdoor,4990
+152,Navaja Multiusos,Camping y Outdoor,1990
+153,Mochila Impermeable,Camping y Outdoor,3990
+154,Tienda de Campaña para 4 personas,Camping y Outdoor,8990
+155,Gafas de Sol Polarizadas,Accesorios,2490
+156,Bufanda de Lana,Accesorios,1290
+157,Gorra de Béisbol,Accesorios,1490
+158,Bolso de Cuero,Accesorios,4990
+159,Reloj Analógico,Accesorios,3990
+160,Lentes de Lectura,Accesorios,990
+161,Paraguas Plegable,Accesorios,1990
+162,Anillo de Plata,Joyería,3490
+163,Collar de Oro,Joyería,5990
+164,Pulsera de Acero,Joyería,2490
+165,Aretes de Diamante,Joyería,8990
+166,Bolso de Mano de Diseñador,Moda y Belleza,6990
+167,Zapatos de Cuero Italiano,Moda y Belleza,7990
+168,Camisa de Seda,Moda y Belleza,4990
+169,Vestido de Noche,Moda y Belleza,8990
+170,Traje de Baño de Marca,Moda y Belleza,3490
+171,Gafas de Realidad Virtual,Tecnología,5990
+172,Auriculares Inalámbricos,Tecnología,1990
+173,Powerbank de Alta Capacidad,Tecnología,2990
+174,Laptop Ultradelgada,Tecnología,7990
+175,Smartwatch con Monitor de Ritmo Cardíaco,Tecnología,3990
+176,Cámara Deportiva 4K,Tecnología,2990
+177,Altavoz Bluetooth Resistente al Agua,Tecnología,1490
+178,Impresora Multifuncional a Color,Tecnología,4990
+179,Teclado Inalámbrico Retroiluminado,Tecnología,1990
+180,Mouse Ergonómico con Sensor Óptico,Tecnología,990
+181,Router Wi-Fi de Alta Velocidad,Tecnología,3490
+182,Disco Duro Externo de 1TB,Tecnología,1990
+183,Tarjeta de Memoria SD de 64GB,Tecnología,490
+184,Lámpara LED Inteligente Controlable por Voz,Hogar Inteligente,2490
+185,Enchufe Inteligente con Control Remoto,Hogar Inteligente,990
+186,Termostato Programable para Calefacción,Hogar Inteligente,3990
+187,Cámara de Seguridad con Visión Nocturna,Hogar Inteligente,2990
+188,Aspiradora Robot Inteligente,Hogar Inteligente,4990
+189,Báscula Digital de Precisión,Salud y Bienestar,1490
+190,Pulsioxímetro de Dedo para Medir Oxígeno,Salud y Bienestar,1990
+191,Masajeador Shiatsu para Cuello y Espalda,Salud y Bienestar,2990
+192,Banda Elástica de Resistencia para Ejercicios,Salud y Bienestar,590
+193,Máscara de Belleza con Tecnología LED,Cuidado de la Piel,3490
+194,Crema Antiarrugas con Ácido Hialurónico,Cuidado de la Piel,2490
+195,Protector Solar FPS 50+ Resistente al Agua,Cuidado de la Piel,1990
+196,Exfoliante Facial de Vitamina C,Cuidado de la Piel,1490
+197,Shampoo Reparador con Keratina,Cuidado del Cabello,1990
+198,Acondicionador Hidratante con Aceite de Argán,Cuidado del Cabello,1490
+199,Mascarilla Capilar Nutritiva,Cuidado del Cabello,990
+200,Aceite de Coco Orgánico para el Cabello,Cuidado del Cabello,1490
+201,Gel de Ducha Refrescante con Aloe Vera,Cuidado Corporal,990
+202,Loción Corporal Hidratante de Almendras,Cuidado Corporal,1490
+203,Desodorante Roll-On de Larga Duración,Cuidado Corporal,690
+204,Jabón Líquido Antibacterial,Cuidado Corporal,790
+205,Esmalte de Uñas de Larga Duración,Maquillaje,990
+206,Delineador de Ojos en Gel Waterproof,Maquillaje,1490
+207,Base de Maquillaje de Cobertura Total,Maquillaje,1990
+208,Labial Mate de Larga Duración,Maquillaje,1290
+209,Paleta de Sombras de Ojos con 12 Tonos,Maquillaje,2490
+210,Brochas Profesionales para Maquillaje,Maquillaje,1990
+211,Rizador de Pestañas de Precisión,Maquillaje,590
+212,Spray Fijador de Maquillaje,Maquillaje,990
+213,Bálsamo Labial Hidratante con SPF 30,Cuidado Labial,490
+214,Exfoliante Labial de Azúcar y Miel,Cuidado Labial,690
+215,Protector Labial Reparador Nocturno,Cuidado Labial,790
+216,Tinte Labial de Larga Duración,Cuidado Labial,990
+217,Crema para Contorno de Ojos Antiarrugas,Cuidado Facial,1490
+218,Gel Limpiador Facial de Ácido Salicílico,Cuidado Facial,990
+219,Mascarilla de Arcilla Purificante,Cuidado Facial,1290
+220,Tónico Facial Refrescante con Extracto de Pepino,Cuidado Facial,890
+221,Sérum Facial Reafirmante con Vitamina E,Cuidado Facial,1990
+222,Crema Hidratante de Noche con Colágeno,Cuidado Facial,1490
+223,Protector Solar Facial FPS 50+ Antiedad,Cuidado Facial,2490
+224,Desmaquillante Bifásico para Ojos,Cuidado Facial,990
+225,Agua Micelar Limpiadora para Rostro,Cuidado Facial,1290
+226,Crema para Manos y Uñas Nutritiva,Cuidado de Manos,790
+227,Exfoliante de Manos con Cristales de Sal,Cuidado de Manos,590
+228,Aceite de Cutícula Reparador,Cuidado de Manos,690
+229,Removedor de Esmalte sin Acetona,Cuidado de Manos,490
+230,Crema para Pies Agrietados con Karité,Cuidado de Pies,990
+231,Exfoliante de Pies con Piedra Pómez,Cuidado de Pies,790
+232,Crema Desodorante para Pies con Mentol,Cuidado de Pies,890
+233,Bálsamo Reparador para Talones,Cuidado de Pies,690
+234,Lima de Uñas Profesional,Cuidado de Pies,490
+235,Cepillo para Uñas y Cutículas,Cuidado de Pies,390
+236,Removedor de Callosidades,Cuidado de Pies,590
+237,Aceite Esencial de Lavanda Relajante,Aromaterapia,990
+238,Aceite Esencial de Eucalipto Antiséptico,Aromaterapia,890
+239,Aceite Esencial de Limón Energizante,Aromaterapia,790
+240,Aceite Esencial de Naranja Dulce,Aromaterapia,690
+241,Aceite Esencial de Árbol de Té,Aromaterapia,990
+242,Vela Aromática de Vainilla,Aromaterapia,1290
+243,Vela Aromática de Lavanda,Aromaterapia,1390
+244,Incienso de Sándalo,Aromaterapia,990
+245,Incienso de Mirra,Aromaterapia,1090
+246,Lámpara de Sal del Himalaya,Aromaterapia,1990
+247,Difusor de Aceites Esenciales,Aromaterapia,2990
+248,Bolsa de Té de Hierbabuena,Infusiones,590
+249,Bolsa de Té de Manzanilla,Infusiones,490
+250,Bolsa de Té Verde Matcha,Infusiones,990
+251,Bolsa de Té de Jengibre y Limón,Infusiones,690
+252,Bolsa de Té de Menta,Infusiones,590
+253,Bolsa de Té de Frutos Rojos,Infusiones,790
+254,Bolsa de Té de Rooibos,Infusiones,890
+255,Bolsa de Té de Hibisco,Infusiones,690
+256,Bolsa de Té de Earl Grey,Infusiones,790
+257,Bolsa de Té de Regaliz,Infusiones,690
+258,Botella de Agua de Cristal,Accesorios de Cocina,1290
+259,Termo de Acero Inoxidable,Accesorios de Cocina,1990
+260,Tabla de Cortar de Bambú,Accesorios de Cocina,1090
+261,Molde para Magdalenas de Silicona,Accesorios de Cocina,990
+262,Batidor de Silicona para Cocina,Accesorios de Cocina,790
+263,Espátula de Cocina de Acero,Accesorios de Cocina,890
+264,Colador de Acero Inoxidable,Accesorios de Cocina,1190
+265,Jarra de Cristal para Bebidas,Accesorios de Cocina,1490
+266,Tabla para Cortar Pizza,Accesorios de Cocina,990
+267,Cucharón de Sopa de Acero,Accesorios de Cocina,690
+268,Cuchillo de Chef de Acero,Accesorios de Cocina,1990
+269,Escurridor de Ensaladas de Plástico,Accesorios de Cocina,790
+270,Tijeras de Cocina de Acero Inoxidable,Accesorios de Cocina,1090
+271,Rallador de Queso de Acero,Accesorios de Cocina,1290
+272,Abrebotellas de Acero Inoxidable,Accesorios de Cocina,690
+273,Exprimidor de Limón de Plástico,Accesorios de Cocina,490
+274,Sacacorchos de Metal,Accesorios de Cocina,990
+275,Tapas de Silicona Reutilizables,Accesorios de Cocina,890
+276,Separadores de Yema de Huevo,Accesorios de Cocina,590
+277,Molinillo de Pimienta de Madera,Accesorios de Cocina,1190
+278,Guantes de Cocina Resistentes al Calor,Accesorios de Cocina,990
+279,Delantal de Cocina de Tela,Accesorios de Cocina,690
+280,Taza de Café de Porcelana,Vajilla y Cubiertos,690
+281,Plato Llanero de Cerámica,Vajilla y Cubiertos,890
+282,Tenedor de Acero Inoxidable,Vajilla y Cubiertos,390
+283,Cuchara de Mesa de Acero,Vajilla y Cubiertos,490
+284,Cuchillo de Postre de Acero,Vajilla y Cubiertos,590
+285,Vaso de Vidrio Templado,Vajilla y Cubiertos,790
+286,Jarra de Agua de Cristal,Vajilla y Cubiertos,990
+287,Ensaladera de Porcelana Blanca,Vajilla y Cubiertos,1290
+288,Copa de Vino Tinto de Cristal,Vajilla y Cubiertos,1190
+289,Copa de Champán de Cristal,Vajilla y Cubiertos,1490
+290,Tetera de Hierro Fundido,Vajilla y Cubiertos,1990
+291,Azucarero de Porcelana con Cuchara,Vajilla y Cubiertos,990
+292,Salsera de Acero Inoxidable,Vajilla y Cubiertos,790
+293,Juego de Tazas para Espresso,Vajilla y Cubiertos,1590
+294,Bandeja de Servicio de Madera,Vajilla y Cubiertos,1690
+295,Plato de Postre de Porcelana,Vajilla y Cubiertos,690
+296,Salero y Pimentero de Cerámica,Vajilla y Cubiertos,990
+297,Cucharilla de Café de Acero,Vajilla y Cubiertos,390
+298,Plato para Sopa de Cerámica,Vajilla y Cubiertos,990
+299,Plato para Ensalada de Bambú,Vajilla y Cubiertos,890
+300,Bol de Cereal de Porcelana,Vajilla y Cubiertos,790
+301,Mantequillera de Porcelana con Tapa,Vajilla y Cubiertos,1290
+302,Bandeja para Servir de Acero Inoxidable,Vajilla y Cubiertos,1490
+303,Porta Utensilios de Cocina de Cerámica,Vajilla y Cubiertos,1190
+304,Molde para Torta Desmontable,Vajilla y Cubiertos,990
+305,Set de Cuchillos de Cocina de 5 piezas,Vajilla y Cubiertos,2490
+306,Juego de Ollas y Sartenes Antiadherentes,Vajilla y Cubiertos,3990
+307,casita,hogar,15000000
+308,casona,hogar,2000000
