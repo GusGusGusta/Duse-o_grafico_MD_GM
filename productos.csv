@@ -3,7 +3,6 @@ id,producto,categoria,precio
 2,Lechuca,Frutas y Verduras,600
 3,Lechuga Crespa,Frutas y Verduras,590
 4,Zanahoria,Frutas y Verduras,490
-5,Papa,Frutas y Verduras,390
 6,Cebolla,Frutas y Verduras,490
 7,Pimiento Rojo,Frutas y Verduras,990
 8,Tomate,Frutas y Verduras,690
@@ -11,7 +10,7 @@ id,producto,categoria,precio
 10,Palta Hass,Frutas y Verduras,1290
 11,Sandía,Frutas y Verduras,990
 12,Piña,Frutas y Verduras,1290
-13,Naranja,Frutas y Verduras,590
+13,13,13,13
 14,Limón,Frutas y Verduras,490
 15,Pera,Frutas y Verduras,1090
 16,Uva,Frutas y Verduras,1890
@@ -298,7 +297,6 @@ id,producto,categoria,precio
 297,Cucharilla de Café de Acero,Vajilla y Cubiertos,390
 298,Plato para Sopa de Cerámica,Vajilla y Cubiertos,990
 299,Plato para Ensalada de Bambú,Vajilla y Cubiertos,890
-300,Bol de Cereal de Porcelana,Vajilla y Cubiertos,790
 301,Mantequillera de Porcelana con Tapa,Vajilla y Cubiertos,1290
 302,Bandeja para Servir de Acero Inoxidable,Vajilla y Cubiertos,1490
 303,Porta Utensilios de Cocina de Cerámica,Vajilla y Cubiertos,1190
@@ -307,3 +305,6 @@ id,producto,categoria,precio
 306,Juego de Ollas y Sartenes Antiadherentes,Vajilla y Cubiertos,3990
 307,casita,hogar,15000000
 308,casona,hogar,2000000
+309,Mazapan Costeño,Panaderia,3500
+310,prueba,prueba,1
+311,nuevo2,nuevo2,30
