@@ -11,27 +11,6 @@ conexion = sqlite3.connect("ventas.db")
 cursor = conexion.cursor()
 tucarro = []  # Inicializar la lista del carrito fuera de la función
 
-def exportar_ventas_csv():
-    cursor.execute('SELECT * FROM ventas')
-    ventas = cursor.fetchall()
-    #conexion.close()
-    with open('ventas.csv', 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(['id', 'fecha', 'producto', 'categoria', 'precio', 'cantidad', 'total'])
-        writer.writerows(ventas)
-
-def salir():
-    conexion.commit()
-    exit()
-
-def exportar_productos_csv():
-    cursor.execute('SELECT * FROM productos')
-    productos = cursor.fetchall()
-    #conexion.close()
-    with open('productos.csv', 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(['id', 'producto', 'categoria', 'precio'])
-        writer.writerows(productos)
 
 def buscar_producto_por_id(producto_id):
     cursor.execute('SELECT * FROM productos WHERE id = ?', (producto_id,))
@@ -50,27 +29,6 @@ def insertToDb(ventas):
     INSERT INTO ventas (fecha, producto, categoria, precio, cantidad, total)
     VALUES (?, ?, ?, ?, ?, ?)
     ''', ventas)
-    #conexion.commit()
-
-def insertProductoToDb(producto):
-    cursor.execute('''
-    INSERT INTO productos (nombre, categoria, precio)
-    VALUES (?, ?, ?)
-    ''', producto)
-    #conexion.commit()
-
-def eliminarProductoToDb(producto):
-    cursor.execute('''
-    DELETE from productos where id = ?  
-    ''', producto)
-    conexion.commit()
-
-def actualizarProductoToDb(id, nombre, categoria, precio):
-    cursor.execute('''
-    UPDATE productos
-    SET nombre = ?, categoria = ?, precio = ?
-    WHERE id = ?
-    ''', (nombre, categoria, precio, id))
     #conexion.commit()
 
 def leer_datos():
@@ -107,6 +65,7 @@ def crear_tablas():
    # conexion.commit()
 crear_tablas()
 
+#menu principal
 def inicio():
     print("===================================")
     print("   ✔️   MENU PRINCIPAL LYDER  ✔️")
@@ -132,99 +91,7 @@ def inicio():
             print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
             inicio()
 
-def exportar():
-    print("=====================================")
-    print("✔️ SELECCIONA UNA OPCION ✔️")
-    print("=====================================")
-    print("🔵 1️⃣      📑 EXCEL 📑")
-    print("🔵 2️⃣    📊 POWER BI 📊")
-    print("🔵 3️⃣     🔙 VOLVER 🔙")
-    print("🔵 4️⃣      🚪 SALIR 🚪")
-    print("=====================================")
-    ops = input("Ingresa opcion ==> ")
-
-    while True:
-        if ops == '1':
-            exportar_excel()
-        elif ops == '2':
-            #informe()
-            exportar_powerbi()
-            break
-        elif ops == '3':
-            inicio()
-        elif ops == '4':
-            print("Saliendo del programa...")
-            salir()
-        else:
-            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
-            inicio()
-
-def exportar_excel():
-    print("=====================================")
-    print("✔️ SELECCIONA UNA OPCION ✔️")
-    print("=====================================")
-    print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
-    print("🔵 2️⃣       🛒 VENTAS 🛒")
-    print("🔵 3️⃣       🔙 VOLVER 🔙")
-    print("🔵 4️⃣        🚪 SALIR 🚪")
-    print("=====================================")
-    ops = input("Ingresa opcion ==> ")
-
-    while True:
-        if ops == '1':
-            exportar_productos_csv()
-            print("=====================================")
-            print("Excel Exportado con exito ! ")
-            print("=====================================")
-            inicio()
-        elif ops == '2':
-            exportar_ventas_csv()
-            print("=====================================")
-            print("Excel Exportado con exito ! ")
-            print("=====================================")
-            inicio()
-        elif ops == '3':
-            exportar()
-        elif ops == '4':
-            print("Saliendo del programa...")
-            salir()
-        else:
-            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
-            exportar_excel()
-
-def exportar_powerbi():
-    print("=====================================")
-    print("✔️ SELECCIONA UNA OPCION ✔️")
-    print("=====================================")
-    print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
-    print("🔵 2️⃣       🛒 VENTAS 🛒")
-    print("🔵 3️⃣       🔙 VOLVER 🔙")
-    print("🔵 4️⃣        🚪 SALIR 🚪")
-    print("=====================================")
-    ops = input("Ingresa opcion ==> ")
-
-    while True:
-        if ops == '1':
-            exportar_productos_csv()
-            print("=====================================")
-            print("Excel Exportado con exito ! ")
-            print("=====================================")
-            inicio()
-        elif ops == '2':
-            exportar_ventas_csv()
-            print("=====================================")
-            print("Excel Exportado con exito ! ")
-            print("=====================================")
-            inicio()
-        elif ops == '3':
-            exportar()
-        elif ops == '4':
-            print("Saliendo del programa...")
-            salir()
-        else:
-            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
-            exportar_excel()
-
+#Opcion 1
 def mantenedor_productos():
     print("====================================")
     print("     🏷️ MANTENEDOR PRODUCTOS 🏷️    ")
@@ -254,7 +121,46 @@ def mantenedor_productos():
             print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
             mantenedor_productos()
             break
-  
+
+def insertProductoToDb(producto):
+    cursor.execute('''
+    INSERT INTO productos (nombre, categoria, precio)
+    VALUES (?, ?, ?)
+    ''', producto)
+    #conexion.commit()
+
+def eliminarProductoToDb(producto):
+    cursor.execute('''
+    DELETE from productos where id = ?  
+    ''', producto)
+    conexion.commit()
+
+def actualizarProductoToDb(id, nombre, categoria, precio):
+    cursor.execute('''
+    UPDATE productos
+    SET nombre = ?, categoria = ?, precio = ?
+    WHERE id = ?
+    ''', (nombre, categoria, precio, id))
+    #conexion.commit()
+
+#Mantenedor Ops 1
+def ingresar_producto():
+    print("============================")
+    print("   🏷️ INGRESO PRODUCTO 🏷️  ")
+    print("============================")
+    Producto = input("Ingresa el nombre del producto ==> ")
+    categoria = input("Ingresa la categoría del producto ==> ")
+    try:
+        precio = float(input("Ingresa el precio del producto ==> "))
+    except ValueError:
+        print("❗ Entrada inválida. El precio debe ser un número.")
+        ingresar_producto()
+    producto = (Producto, categoria, precio)
+    insertProductoToDb(producto)
+    print(f"Producto {Producto} ingresado con éxito.")
+    mantenedor_productos()
+
+#Mantenedor Ops 2
 def actualizar_producto():
     print("===============================")
     print("   ✏️ ACTUALIZAR PRODUCTO ✏️  ")
@@ -281,22 +187,7 @@ def actualizar_producto():
     print("=========================================")
     mantenedor_productos()
 
-def ingresar_producto():
-    print("============================")
-    print("   🏷️ INGRESO PRODUCTO 🏷️  ")
-    print("============================")
-    Producto = input("Ingresa el nombre del producto ==> ")
-    categoria = input("Ingresa la categoría del producto ==> ")
-    try:
-        precio = float(input("Ingresa el precio del producto ==> "))
-    except ValueError:
-        print("❗ Entrada inválida. El precio debe ser un número.")
-        ingresar_producto()
-    producto = (Producto, categoria, precio)
-    insertProductoToDb(producto)
-    print(f"Producto {Producto} ingresado con éxito.")
-    mantenedor_productos()
-
+#Mantenedor Ops 3
 def eliminar_producto():
     print("=====================================")
     print("   🏷️ ELIMINAR PRODUCTO 🏷️  ")
@@ -307,7 +198,8 @@ def eliminar_producto():
     print(f"Producto {codigo} Eliminado con éxito.")
     print("=====================================")
     mantenedor_productos()
-        
+   
+#Opcion 2 
 def ingresar_caja():
     print("")
     print("============================")
@@ -377,7 +269,125 @@ def ingresar_caja():
             print("❗ PRODUCTO NO ENCONTRADO ❗")
             print("❗  INTÉNTALO NUEVAMENTE ❗")
 
+#Opcion 3
+def exportar():
+    print("=====================================")
+    print("✔️ SELECCIONA UNA OPCION ✔️")
+    print("=====================================")
+    print("🔵 1️⃣      📑 EXCEL 📑")
+    print("🔵 2️⃣    📊 POWER BI 📊")
+    print("🔵 3️⃣     🔙 VOLVER 🔙")
+    print("🔵 4️⃣      🚪 SALIR 🚪")
+    print("=====================================")
+    ops = input("Ingresa opcion ==> ")
 
+    while True:
+        if ops == '1':
+            exportar_excel()
+        elif ops == '2':
+            #informe()
+            exportar_powerbi()
+            break
+        elif ops == '3':
+            inicio()
+        elif ops == '4':
+            print("Saliendo del programa...")
+            salir()
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            inicio()
 
+#Exportar Excel Opc 1
+def exportar_excel():
+    print("=====================================")
+    print("✔️ SELECCIONA UNA OPCION ✔️")
+    print("=====================================")
+    print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
+    print("🔵 2️⃣       🛒 VENTAS 🛒")
+    print("🔵 3️⃣       🔙 VOLVER 🔙")
+    print("🔵 4️⃣        🚪 SALIR 🚪")
+    print("=====================================")
+    ops = input("Ingresa opcion ==> ")
+
+    while True:
+        if ops == '1':
+            exportar_productos_csv()
+            print("=====================================")
+            print("Excel Exportado con exito ! ")
+            print("=====================================")
+            inicio()
+        elif ops == '2':
+            exportar_ventas_csv()
+            print("=====================================")
+            print("Excel Exportado con exito ! ")
+            print("=====================================")
+            inicio()
+        elif ops == '3':
+            exportar()
+        elif ops == '4':
+            print("Saliendo del programa...")
+            salir()
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            exportar_excel()
+
+#Exportar Exc Ops 1 
+def exportar_productos_csv():
+    cursor.execute('SELECT * FROM productos')
+    productos = cursor.fetchall()
+    #conexion.close()
+    with open('productos.csv', 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['id', 'producto', 'categoria', 'precio'])
+        writer.writerows(productos)
+ 
+#Exportar Exc Ops 2           
+def exportar_ventas_csv():
+    cursor.execute('SELECT * FROM ventas')
+    ventas = cursor.fetchall()
+    #conexion.close()
+    with open('ventas.csv', 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(['id', 'fecha', 'producto', 'categoria', 'precio', 'cantidad', 'total'])
+        writer.writerows(ventas)
+
+#Exportar Power Bi Opc 2
+def exportar_powerbi():
+    print("=====================================")
+    print("✔️ SELECCIONA UNA OPCION ✔️")
+    print("=====================================")
+    print("🔵 1️⃣      🏷️ PRODUCTOS 🏷️")
+    print("🔵 2️⃣       🛒 VENTAS 🛒")
+    print("🔵 3️⃣       🔙 VOLVER 🔙")
+    print("🔵 4️⃣        🚪 SALIR 🚪")
+    print("=====================================")
+    ops = input("Ingresa opcion ==> ")
+
+    while True:
+        if ops == '1':
+            exportar_productos_csv()
+            print("=====================================")
+            print("Excel Exportado con exito ! ")
+            print("=====================================")
+            inicio()
+        elif ops == '2':
+            exportar_ventas_csv()
+            print("=====================================")
+            print("Excel Exportado con exito ! ")
+            print("=====================================")
+            inicio()
+        elif ops == '3':
+            exportar()
+        elif ops == '4':
+            print("Saliendo del programa...")
+            salir()
+        else:
+            print("❗ Opción no válida. Por favor, selecciona una opción válida. ❗")
+            exportar_excel()
+
+#Opcion 4 Salir
+def salir():
+    conexion.commit()
+    exit()
 
 inicio()
